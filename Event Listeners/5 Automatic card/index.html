@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        padding: 50px;
+      }
+      #cards {
+        padding: 20px;
+        display: flex;
+        gap: 20px;
+      }
+      .card {
+        border: 2px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 20px;
+        width: 20%;
+      }
+      .card img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        align-self: center;
+      }
+      .card * {
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 5px;
+        overflow: hidden;
+      }
+      #about{
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" placeholder="Profile pic" />
+      <input type="text" placeholder="Enter Name" />
+      <input type="text" placeholder="Enter Age" />
+      <input type="text" placeholder="About section" />
+      <input type="submit" value="submit" />
+    </form>
+    <div id="cards">
+      <div class="card">
+        <img
+          id="img"
+          src="https://images.unsplash.com/photo-1725878746053-407492aa4034?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNnx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+        />
+        <h1 id="name">Alina</h1>
+        <p id="age">23</p>
+        <p id="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum suscipit ducimus, eveniet voluptates voluptatibus nulla vel laudantium molestias hic quas magnam mollitia maxime maiores. Inventore ipsam odit perspiciatis eligendi obcaecati.</p>
+      </div>
+    </div>
+    <script>
+      let form = document.querySelector("form");
+      let input = document.querySelectorAll("input");
+      let src = document.querySelector("#img");
+      let nm = document.querySelector("#name");
+      let age = document.querySelector("#age");
+      let skills = document.querySelector("#skills");
+      let email = document.querySelector("#email");
+      let container = document.querySelector("#cards");
+
+
+      form.addEventListener("submit", function (d) {
+        d.preventDefault();
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
+        container.appendChild(card);
+
+        let img = document.createElement("img");
+        img.setAttribute("src", input[0].value);
+        card.appendChild(img);
+
+        let nme = document.createElement("h1");
+        nme.setAttribute("id", "name");
+        card.appendChild(nme);
+        nme.innerHTML = input[1].value;
+
+        let age = document.createElement("p");
+        age.setAttribute("id", "age");
+        card.appendChild(age);
+        age.innerHTML = input[2].value;
+
+        let about = document.createElement("p");
+        about.setAttribute("id", "about");
+        card.appendChild(about);
+        about.innerHTML = input[3].value;
+
+
+        input.forEach(elem =>{
+            if(elem.value != "submit"){
+                elem.value = ""
+            }
+        })
+      });
+    </script>
+  </body>
+</html>

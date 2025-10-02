@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="text" placeholder="Type here" />
+      <h1>Total characters: <span>20</span></h1>
+    </main>
+
+    <script>
+      let input = document.querySelector("input");
+      let count = document.querySelector("h1 span");
+
+      input.addEventListener("input", function (d) {
+        left = 20 - input.value.length;
+        if (left < 0) {
+          count.innerHTML = left;
+          count.style.color = "red";
+        } else {
+          count.style.color = "black";
+          count.innerHTML = left;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #222;
+            height: 100%;
+            width: 100%;
+            user-select: none;
+            font-family: sans-serif;
+        }
+        input{
+            display: none;
+        }
+        #select{
+            padding: 12px 22px;
+            border-radius: 5px;
+            background-color: cadetblue;
+        }
+        h1{
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <input type="file" name="" id="inp">
+        <div id="select">Select file</div>
+        <h1>Please Select file</h1>
+
+    </main>
+    <script>
+        let inp = document.querySelector("#inp")
+        let select = document.querySelector("#select")
+        let nam = document.querySelector("h1")
+
+        select.addEventListener("click",function(){
+            nam.innerHTML = "Please select a file"
+            inp.click();
+        })
+        inp.addEventListener("change",function(e){
+            let nm = e.target.files[0]
+            if(nm){
+                nam.innerHTML = nm.name
+            }else{
+                nam.innerHTML = "Cancelled"
+            }            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            padding: 30px;
+        }
+        main{
+            background-color: #222;
+            padding: 10px;
+        }
+        .a{
+            height: 80%;
+            width: 80%;
+            background-color: blue;
+        }
+        .b{
+            height: 80%;
+            width: 80%;
+            background-color: royalblue;
+        }
+        .c{
+            height: 80%;
+            width: 80%;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+                <button>click me</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let btn = document.querySelector("button")
+        let c = document.querySelector(".c")
+        let b = document.querySelector(".b")
+        let a = document.querySelector(".a")
+        btn.addEventListener("click",function(){
+            console.log("button clicked");
+        })
+        c.addEventListener("click",function(){
+            console.log("c clicked");
+        })
+        b.addEventListener("click",function(){
+            console.log("b clicked");
+        })
+        a.addEventListener("click",function(){
+            console.log("a clicked");
+        })
+    </script>
+</body>
+</html>
