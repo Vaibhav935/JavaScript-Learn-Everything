@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #download-card {
+  border: 1px solid grey;
+  width: 20%;
+  max-height: 50%;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  background-color: rgb(72, 72, 72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+main #download-card .progress-container {
+  width: 100%;
+  height: 15px;
+  border-radius: 50px;
+  background-color: rgb(114, 114, 114);
+  overflow: hidden;
+}
+main #download-card .progress-container .progress-bar {
+  height: 100%;
+  background-color: white;
+  width: 0%;
+}
+main #download-card #button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1vw;
+}
+main #download-card #button .cancel {
+  background-color: red;
+  border-radius: 50px;
+  padding: 0.5em 1em;
+}
+main #download-card #button .download-button {
+  background-color: green;
+  border-radius: 50px;
+  padding: 0.5em 1em;
+}
+main #download-card #button .resume {
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #download-card .button:active {
+  scale: 0.99;
+}/*# sourceMappingURL=style.css.map */
