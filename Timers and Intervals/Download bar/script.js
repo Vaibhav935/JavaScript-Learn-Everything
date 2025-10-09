@@ -14,7 +14,6 @@ function startDownload() {
   heading.innerHTML = "Downloading...";
   heading.style.color = "white";
   start = setInterval(function () {
-    console.log("start ke andar");
 
     if (count <= 99) {
       count++;
